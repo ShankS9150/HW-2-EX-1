@@ -6,3 +6,16 @@ INSERT INTO Students VALUES(7, 'Shashank', '21', 'M', 350)
 UPDATE Students SET Points = 350 WHERE Name='Basma'
 UPDATE Students SET Points = 150 WHERE Name='Alex'
 
+CREATE TABLE graduates(
+    ID INTEGER  PRIMARY KEY AUTOINCREMENT,
+    Name  TEXT NOT NULL UNIQUE,
+    Age INTEGER,
+	Gender TEXT,
+	Points INTEGER,
+	Graduation TEXT
+);
+
+INSERT INTO graduates(Name, Age, Gender, Points) SELECT Name, Age, Gender, Points FROM Students WHERE Students.Name='Layal';
+UPDATE graduates SET Graduation='08-09-2018' WHERE Name='Layal';
+DELETE FROM graduates WHERE Name='Layal';
+
